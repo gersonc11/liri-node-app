@@ -11,7 +11,7 @@ let getBand = () => {
     var bands = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
     axios.get(bands)
         .then(response => { 
-            if (response > 0) {
+            if (response) {
                 for (i = 0; i < response.data.length; i++) {
                     console.log('Venue: ' + response.data[i].venue.name)
                     console.log('Location :' + response.data[i].venue.city + ', ' + response.data[i].venue.country)
